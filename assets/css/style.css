@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+body {
+  background: #f1f1f1;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 60px 1fr auto;
+  height: 100vh;
+}
+header {
+  background: #fff;
+  padding: 15px 50px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .anim-entry-loop {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  position: relative;
+  transition: 2s ease all;
+}
+main .anim-entry-loop.inactive {
+  display: none;
+}
+main .anim-entry-loop img {
+  height: 128px;
+  position: absolute;
+  opacity: 0;
+  animation-name: animEntryHandLoop;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+main .anim-entry-loop img:nth-child(2) {
+  animation-delay: 2s;
+}
+main .anim-entry-loop img:nth-child(3) {
+  animation-delay: 4s;
+}
+main .anim-tension-loop {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: 2s ease all;
+}
+main .anim-tension-loop.inactive {
+  display: none;
+}
+main .anim-tension-loop img {
+  height: 128px;
+  position: absolute;
+  transform: translate(0px, -128px);
+  animation-name: animTensionHandLoop;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+main .anim-tension-loop img:nth-child(2) {
+  animation-delay: 0.5s;
+}
+main .anim-tension-loop img:nth-child(3) {
+  animation-delay: 1s;
+}
+main .game-result {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: 2s ease all;
+}
+main .game-result.inactive {
+  display: none;
+}
+main .game-result img {
+  height: 128px;
+  position: absolute;
+  animation-name: animResultsHandEntry;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+main .game-result-text {
+  font-size: 1.25em;
+  font-weight: 600;
+  padding: 15px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  opacity: 1;
+  animation-name: animResultsTextEntry;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+main .game-result-text.inactive {
+  display: none;
+}
+main .game-actions button {
+  background: #fff;
+  padding: 5px;
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease all;
+}
+main .game-actions button img {
+  height: 60px;
+}
+main .game-actions button:hover {
+  transform: translate(0px, -4px);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+main .game-actions button:active {
+  transform: translate(0px, 4px);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+main .game-actions button:focus {
+  outline: 0;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+  opacity: 0.4;
+}
+@keyframes animEntryHandLoop {
+  0% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+    opacity: 0;
+  }
+  3.75% {
+    opacity: 1;
+  }
+  12.5% {
+    transform: translate(-50px, -50px) rotateZ(-45deg);
+  }
+  21.25% {
+    transform: translate(20px, 0px) rotateZ(15deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+    opacity: 0;
+  }
+}
+@keyframes animTensionHandLoop {
+  0% {
+    transform: translate(0px, -128px);
+  }
+  50% {
+    transform: translate(0px, 128px);
+  }
+  100% {
+    transform: translate(0px, 128px);
+  }
+}
+@keyframes animResultsHandEntry {
+  0% {
+    transform: translate(0px, -256px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes animResultsTextEntry {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rock Paper Scissors</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+      <header>
+        Rock Paper Scissors
+      </header>
+
+      <main>
+        <div>
+          <div class="anim-entry-loop">
+            <img src="assets/img/rockHand.svg" class="anim-entry-rock" />
+            <img src="assets/img/paperHand.svg" class="anim-entry-paper" />
+            <img src="assets/img/scissorsHand.svg" class="anim-entry-scissors" />
+          </div>
+          <div class="anim-tension-loop inactive">
+            <img src="assets/img/rockHand.svg" class="anim-tension-rock" />
+            <img src="assets/img/paperHand.svg" class="anim-tension-paper" />
+            <img src="assets/img/scissorsHand.svg" class="anim-tension-scissors" />
+          </div>
+          <div class="game-result inactive">
+            <img src="assets/img/rockHand.svg" class="game-result-rock" />
+            <img src="assets/img/paperHand.svg" class="game-result-paper" />
+            <img src="assets/img/scissorsHand.svg" class="game-result-scissors" />
+          </div>
+          <div class="game-result-text inactive">
+            CPU WON
+          </div>
+          <div class="game-actions">
+            <button class="game-rock">
+              <img src="assets/img/rockHand.svg" />
+            </button>
+            <button class="game-paper">
+              <img src="assets/img/paperHand.svg" />
+            </button>
+            <button class="game-scissors">
+              <img src="assets/img/scissorsHand.svg" />
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        &copy; 2018 Andreas Heimann
+      </footer>
+
+      <script src="assets/js/app.js"></script>
+  </body>
+</html>
